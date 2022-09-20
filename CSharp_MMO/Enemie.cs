@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_MMO
 {
-    public class Enemie
+    public class Enemie :Character
     {
 
     }
