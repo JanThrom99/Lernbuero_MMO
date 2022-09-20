@@ -8,7 +8,7 @@ namespace CSharp_MMO
 {
     public class Healer : Character
     {
-        public Healer(int height, int weight, List<Items> items, string name, int damage, int armor, int speed, int health)
+        public Healer(int height, int weight, List<Item> items, string name, int damage, int armor, int speed, int health)
         {
             this.Height = height;
             this.Weight = weight;

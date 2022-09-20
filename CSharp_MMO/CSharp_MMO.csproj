@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archer.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="Enemie.cs" />
     <Compile Include="Healer.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Magician.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
