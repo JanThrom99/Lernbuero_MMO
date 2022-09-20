@@ -15,9 +15,13 @@
             this.Amount = amount;
         }
 
-        public void ReduceAmount(int used)
+        public void ReduceAmount()
         {
-            this.Amount -= used;
+            this.Amount-=1;
+        }
+        public void IncreaseAmount()
+        {
+            this.Amount -= 1;
         }
     }
 }

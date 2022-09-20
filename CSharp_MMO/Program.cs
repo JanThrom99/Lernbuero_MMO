@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp_MMO
 {
@@ -11,84 +8,92 @@ namespace CSharp_MMO
         static void Main(string[] args)
         {
 
-            //Create Archer 
+            #region Create Archer "aragon"
             //Items
             var archerItems = new List<Item>();
-            var bow = new Item("Weapon","Langbogen",2500,1);
-            var arrows = new Item("Weapon", "Pfeile", 10,100);
-            var archerPotion = new Item("Item", "Heiltrank", 1000, 10);
+            var bow = new Item("Weapon", "Langbogen", 2500, 1);
+            var arrows = new Item("Arrow", "Pfeil", 10, 100);
+            var archerPotion = new Item("Potion", "Heiltrank", 1000, 10);
 
             archerItems.Add(bow);
             archerItems.Add(arrows);
             archerItems.Add(archerPotion);
 
             //Character
-            var archer = new Archer(183,65,archerItems,"Aragon",50,50,10,500);
+            var aragon = new Archer(183, 65, archerItems, "Aragon",75, 50, 10, 350,500);
 
-            archer.CheckStats();
+            aragon.CheckStats();
+            #endregion
 
-
-
-
-            //Create Tank 
+            #region Create Tank "arnold"
             //Items
             var tankItems = new List<Item>();
             var axe = new Item("Weapon", "Knochenbrecher", 10000, 1);
             var axe2 = new Item("Weapon", "Schädelspalter", 15000, 1);
-            var tankPotion = new Item("Item", "Heiltrank", 1000, 3);
+            var tankPotion = new Item("Potion", "Heiltrank", 1000, 3);
 
             tankItems.Add(axe);
             tankItems.Add(axe2);
             tankItems.Add(tankPotion);
 
             //Character
-            var tank = new Tank(170, 110, tankItems, "Arnold", 150, 75, 5, 1500);
+            var arnold = new Tank(170, 110, tankItems, "Arnold", 150, 75, 5, 1500,1500);
 
-            tank.CheckStats();
+            arnold.CheckStats();
+            #endregion
 
-
-            // Create Warrior 
+            #region Create Warrior "thorus"
             //Items
             var warriorItems = new List<Item>();
             var sword = new Item("Weapon", "edler Einhänder", 25000, 1);
-            var shield= new Item("Weapon", "Adanos Schutz", 5000, 1);
-            var warriorPotion = new Item("Item", "Heiltrank", 1000, 5);
+            var shield = new Item("Weapon", "Adanos Schutz", 5000, 1);
+            var warriorPotion = new Item("Potion", "Heiltrank", 1000, 5);
 
             warriorItems.Add(sword);
             warriorItems.Add(shield);
             warriorItems.Add(warriorPotion);
 
             //Character
-            var warrior = new Tank(185, 90, warriorItems, "Thorus",100,100,8,1000);
+            var thorus = new Warrior(185, 90, warriorItems, "Thorus", 100, 100, 8, 1000,1000);
 
-            warrior.CheckStats();
-            
+            thorus.CheckStats();
+            #endregion
 
-            // Create Magician 
+            #region Create Magician "milten"
             //Items
             var magicianItems = new List<Item>();
             var magicStaff = new Item("Weapon", "Die heiligen 3 Plagen", 25000, 1);
-            var magicianPotion = new Item("Item", "Heiltrank", 1000, 5);
+            var magicianPotion = new Item("Potion", "Heiltrank", 1000, 5);
 
             magicianItems.Add(magicStaff);
             magicianItems.Add(magicianPotion);
 
             //Character
-            var magician = new Tank(150, 80, magicianItems, "Milten",75,150,8,1000);
+            var milten = new Magician(150, 80, magicianItems, "Milten",75, 150, 8, 500,1000);
 
-            magician.CheckStats();
+            milten.CheckStats();
+            milten.UsePotion();
+            #endregion
 
-            // Create Healer
+            #region Create Healer "lares"
             //Items
             var healerItems = new List<Item>();
-            var healerPotion = new Item("Item", "Heiltrank", 1000, 50);
+            var healerPotion = new Item("Potion", "Heiltrank", 1000, 50);
 
             healerItems.Add(healerPotion);
 
             //Character
-            var healer = new Tank(200, 75, healerItems, "Lares",0,100,10,1500);
+            var lares = new Healer(200, 75, healerItems, "Lares", 0, 100, 10, 1500,1500);
 
-            healer.CheckStats();
+            lares.CheckStats();
+            #endregion
+
+            #region ACTIONS: Heal | DoDamageTo | UsePotion
+            lares.Heal(aragon);
+            aragon.DoDamageTo(arnold);
+            arnold.DoDamageTo(lares);
+            #endregion
+
 
             Console.ReadKey();
         }

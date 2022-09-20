@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp_MMO
 {
@@ -16,10 +13,45 @@ namespace CSharp_MMO
         public int Armor;
         public int Speed;
         public int Health;
+        public int MaxHealth;
 
-        public void DoDamage()
+        public void DoDamageTo(Character doDamageTo)
         {
+            if (doDamageTo.Health>0)
+            {
+                if (this.Damage > doDamageTo.Armor)
+                {
+                    doDamageTo.Health -= this.Damage;
+                    Console.WriteLine($"{this.Name} hat {doDamageTo.Name} erfolgreich angegriffen und {this.Damage} Schaden gemacht");
+                    Console.WriteLine($"{doDamageTo.Name} HP: {doDamageTo.Health}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("der is doch schon tot?!");
+            }
 
+        }
+
+        public void UsePotion()
+        {
+            if (this.MaxHealth != this.Health)
+            {
+                foreach (var item in this.Items)
+                {
+                    if (item.Name == "Heiltrank" && item.Amount > 0)
+                    {
+                        this.Health += 100;
+                        item.Amount -= 1;
+                        Console.WriteLine($"du wurdest geheilt! \n HP: {this.Health} \n Anzahl Heiltränke: {item.Amount}");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("du musst keinen Heiltrank nehmen");
+            }
+            
         }
 
         public void CheckStats()

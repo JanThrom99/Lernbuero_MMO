@@ -9,7 +9,7 @@ namespace CSharp_MMO
     public class Magician : Character
     {
 
-        public Magician(int height, int weight, List<Item> items, string name, int damage, int armor, int speed, int health)
+        public Magician(int height, int weight, List<Item> items, string name, int damage, int armor, int speed, int health, int maxHealth)
         {
             this.Height = height;
             this.Weight = weight;
@@ -19,6 +19,7 @@ namespace CSharp_MMO
             this.Armor = armor;
             this.Speed = speed;
             this.Health = health;
+            this.MaxHealth = maxHealth;
         }
     }
 }
