@@ -20,7 +20,7 @@ namespace CSharp_MMO
             archerItems.Add(archerPotion);
 
             //Character
-            var aragon = new Archer(183, 65, archerItems, "Aragon",75, 50, 10, 350,500);
+            var aragon = new Archer(183, 65, archerItems, "Aragon", 75, 50, 10, 350, 500);
 
             aragon.CheckStats();
             #endregion
@@ -37,7 +37,7 @@ namespace CSharp_MMO
             tankItems.Add(tankPotion);
 
             //Character
-            var arnold = new Tank(170, 110, tankItems, "Arnold", 150, 75, 5, 1500,1500);
+            var arnold = new Tank(170, 110, tankItems, "Arnold", 150, 75, 5, 1500, 1500);
 
             arnold.CheckStats();
             #endregion
@@ -54,7 +54,7 @@ namespace CSharp_MMO
             warriorItems.Add(warriorPotion);
 
             //Character
-            var thorus = new Warrior(185, 90, warriorItems, "Thorus", 100, 100, 8, 1000,1000);
+            var thorus = new Warrior(185, 90, warriorItems, "Thorus", 100, 100, 8, 1000, 1000);
 
             thorus.CheckStats();
             #endregion
@@ -69,7 +69,7 @@ namespace CSharp_MMO
             magicianItems.Add(magicianPotion);
 
             //Character
-            var milten = new Magician(150, 80, magicianItems, "Milten",75, 150, 8, 500,1000);
+            var milten = new Magician(150, 80, magicianItems, "Milten", 75, 150, 8, 500, 1000);
 
             milten.CheckStats();
             milten.UsePotion();
@@ -83,7 +83,7 @@ namespace CSharp_MMO
             healerItems.Add(healerPotion);
 
             //Character
-            var lares = new Healer(200, 75, healerItems, "Lares", 0, 100, 10, 1500,1500);
+            var lares = new Healer(200, 75, healerItems, "Lares", 0, 100, 10, 1500, 1500);
 
             lares.CheckStats();
             #endregion
@@ -92,8 +92,8 @@ namespace CSharp_MMO
             lares.Heal(aragon);
             aragon.DoDamageTo(arnold);
             arnold.DoDamageTo(lares);
-            #endregion
 
+            #endregion
 
             Console.ReadKey();
         }
